@@ -21,27 +21,15 @@ class MainActivity : AppCompatActivity() {
             val diceVal = Dice().roll()
             val resultImageView: ImageView = findViewById(R.id.imageView)
 
-            when (diceVal) {
-                1 -> {
-                    resultImageView.setImageResource(R.drawable.dice_1)
-                }
-                2 -> {
-                    resultImageView.setImageResource(R.drawable.dice_2)
-                }
-                3 -> {
-                    resultImageView.setImageResource(R.drawable.dice_3)
-                }
-                4 -> {
-                    resultImageView.setImageResource(R.drawable.dice_4)
-                }
-                5 -> {
-                    resultImageView.setImageResource(R.drawable.dice_5)
-                }
-                6 -> {
-                    resultImageView.setImageResource(R.drawable.dice_6)
-                }
+            val drawableResource = when (diceVal) {
+                1 -> R.drawable.dice_1
+                2 -> R.drawable.dice_2
+                3 -> R.drawable.dice_3
+                4 -> R.drawable.dice_4
+                5 -> R.drawable.dice_5
+                else -> R.drawable.dice_6
             }
-
+            resultImageView.setImageResource(drawableResource)
         }
     }
 }
